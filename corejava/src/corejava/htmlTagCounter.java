@@ -16,6 +16,7 @@ public class htmlTagCounter {
         Map<String, Integer> tagStartLine = new HashMap<>();
         Map<String, Integer> tagEndLine = new HashMap<>();
         Map<String, Integer> tagCount = new HashMap<>();
+        
         BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\KavyashreeR\\eclipse-workspace\\corejava\\src\\corejava\\NewFile.html"));
         String line;
         int lineNumber = 0;
@@ -24,20 +25,20 @@ public class htmlTagCounter {
             Pattern pattern = Pattern.compile("<\\s*([\\w]+)[^>]*>");
             Matcher matcher = pattern.matcher(line);
             while (matcher.find()) {
-String tag = matcher.group(1);
+            	String tag = matcher.group(1);
                 tagCount.put(tag, tagCount.getOrDefault(tag, 0) + 1);
                // System.out.println("Tag: " + tag + " | Start Line: " + lineNumber);
             }
             Pattern pattern1 = Pattern.compile("<\\s*([\\w]+)[^>]*>");
             Matcher matcher1 = pattern1.matcher(line);
             while (matcher1.find()) {
-String tag = matcher1.group(1);
+            	String tag = matcher1.group(1);
                 tagStartLine.put(tag, lineNumber);
             }
             pattern = Pattern.compile("</\\s*([\\w]+)>");
             matcher = pattern.matcher(line);
             while (matcher.find()) {
-String tag = matcher.group(1);
+            	String tag = matcher.group(1);
                 tagEndLine.put(tag, lineNumber);
             }
 
