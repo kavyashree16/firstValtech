@@ -1,6 +1,7 @@
 package com.valtech.training.first_maven_project;
 
 import junit.framework.Test;
+
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
@@ -29,7 +30,7 @@ public class AppTest
     }
     
     public void testSayHello() { 
-    	App app = new App()
+    	App app = new App();
     			assertEquals("Hello World", app.sayHello());
     }
 
